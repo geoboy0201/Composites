@@ -7,11 +7,6 @@ function [ABDmatrix,distances,Qbars,Sbars] = laminateStiffnessMatrix(thicknesses
     distances=zeros(1,length(thicknesses)+1);
     distances(1)=-thickness/2;
     distances(end)=thickness/2;
-    if mod(N,2)~=0
-        midplane=(N/2)+1;
-    else
-        midplane=ceil(N/2);
-    end
     for i=2:N
         distances(i)=distances(i-1)+thicknesses(i-1);
     end
