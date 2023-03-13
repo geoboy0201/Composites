@@ -1,4 +1,5 @@
-function [ABDmatrix,distances,Qbars,Sbars] = laminateStiffnessMatrix(thicknesses,thetas,E1s,E2s,G12s,v12s)
+function [ABDmatrix,distances,Qbars,Sbars] = laminateStiffnessMatrix(laminate)
+    [E1s,E2s,G12s,v12s,thicknesses,thetas] = laminateReader(laminate);
     A=zeros(3);
     B=zeros(3);
     D=zeros(3);

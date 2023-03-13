@@ -1,5 +1,5 @@
-function [epsx0,epsy0,gammaxy0,kx,ky,kxy] = midPlaneStrainsCurvature(Nx,Ny,Nxy,Mx,My,Mxy,thicknesses,thetas,E1s,E2s,G12s,v12s)
-    ABDmatrixINV = laminateStiffnessMatrixINV(thicknesses,thetas,E1s,E2s,G12s,v12s);
+function [epsx0,epsy0,gammaxy0,kx,ky,kxy] = midPlaneStrainsCurvature(Nx,Ny,Nxy,Mx,My,Mxy,laminate)
+    ABDmatrixINV = laminateStiffnessMatrixINV(laminate);
     epsk=ABDmatrixINV*[Nx;Ny;Nxy;Mx;My;Mxy];
     epsx0=epsk(1);
     epsy0=epsk(2);

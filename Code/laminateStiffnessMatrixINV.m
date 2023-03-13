@@ -1,4 +1,4 @@
-function [ABDmatrixINV,distances,Qbars,Sbars] = laminateStiffnessMatrixINV(thicknesses,thetas,E1s,E2s,G12s,v12s)
-    [ABDmatrix,distances,Qbars,Sbars] = laminateStiffnessMatrix(thicknesses,thetas,E1s,E2s,G12s,v12s);
+function [ABDmatrixINV,distances,Qbars,Sbars] = laminateStiffnessMatrixINV(laminate)
+    [ABDmatrix,distances,Qbars,Sbars] = laminateStiffnessMatrix(laminate);
     ABDmatrixINV=ABDmatrix^-1;
 end
