@@ -22,4 +22,4 @@ Mxy=0;
 
 [FSstress]=maximumStressTheory(laminate,Nx,Ny,Nxy,Mx,My,Mxy);
 [FSstrain]=maximumStrainTheory(laminate,Nx,Ny,Nxy,Mx,My,Mxy);
-[[0.104300950448511]]=tsaiHillFailure(laminate,Nx,Ny,Nxy,Mx,My,Mxy);
+[FStsai]=tsaiHillFailure(laminate,Nx,Ny,Nxy,Mx,My,Mxy);
