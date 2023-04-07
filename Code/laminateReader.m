@@ -1,13 +1,13 @@
-function [E1s,E2s,G12s,v12s,thicknesses,thetas,longStrengthTen,longStrengthCom,tranStrengthTen,tranStrengthCom,strengthLT] = laminateReader(laminate)
+function [E1s,E2s,G12s,v12s,thicknesses,thetas,longStrengthTen,longStrengthCom,tranStrengthTen,tranStrengthCom,strengthLT,alphax,alphay,alphaxy,betax,betay,betaxy] = laminateReader(laminate)
     % Creates vectors of elastic properties of laminate where each row is a layer
     % and the laminate matrix is:
-    %           E1    E2    G12    v12    thickness    theta  longStrengthTen  longStrengthCom  tranStrengthTen  tranStrengthCom strengthLT
-    % Layer 1   X     X      X      X         X          X          X                 X                X                X            X
-    % Layer 2   X     X      X      X         X          X          X                 X                X                X            X
-    %   .       X     X      X      X         X          X          X                 X                X                X            X
-    %   .       X     X      X      X         X          X          X                 X                X                X            X
-    %   .       X     X      X      X         X          X          X                 X                X                X            X
-    % Layer N   X     X      X      X         X          X          X                 X                X                X            X
+    %           E1    E2    G12    v12    thickness    theta longStrengthTen  longStrengthCom  tranStrengthTen tranStrengthCom strengthLT   alphax   alphay   alphaxy   betax   betay   betaxy
+    % Layer 1   X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
+    % Layer 2   X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
+    %   .       X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
+    %   .       X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
+    %   .       X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
+    % Layer N   X     X      X      X         X          X          X                 X                X                X            X         X       X         X        X       X       X
     
     E1s=laminate(:,1);
     E2s=laminate(:,2);
@@ -20,4 +20,10 @@ function [E1s,E2s,G12s,v12s,thicknesses,thetas,longStrengthTen,longStrengthCom,t
     tranStrengthTen=laminate(:,9);
     tranStrengthCom=laminate(:,10);
     strengthLT=laminate(:,11);
+    alphax=laminate(:,12);
+    alphay=laminate(:,13);
+    alphaxy=laminate(:,14);
+    betax=laminate(:,15);
+    betay=laminate(:,16);
+    betaxy=laminate(:,17);
 end
