@@ -34,7 +34,7 @@ function [sigmax,sigmay,tauxy,sigma1,sigma2,tau12,epsx,epsy,gammaxy,eps1,eps2,ga
     ylabel('z [m]')
     legend('\epsilon_{x}','\epsilon_{y}','\gamma_{xy}')
     set(gca, 'YDir','reverse')
-    set(gcf,'position',[90,90,1000,800])
+    set(gcf,'position',[0,0,700,600])
     
     titleLine1=['N_{x} = ',num2str(Nx),', N_{y} = ',num2str(Ny),', N_{xy} = ',num2str(Nxy),', M_{x} = ',num2str(Mx),', M_{y} = ',num2str(My),', M_{xy} = ',num2str(Mxy)];
     titleLine2=num2str(thetas(1));

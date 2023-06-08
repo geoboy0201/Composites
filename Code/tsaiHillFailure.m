@@ -27,10 +27,10 @@ function [FS]=tsaiHillFailure(laminate,Nx,Ny,Nxy,Mx,My,Mxy)
             transStrength2=tranStrengthCom(i/2);
         end
         
-        A=((sigma1(i)/longStrength)^2)+((sigma2(i)/transStrength)^2)-((sigma1(i)*sigma2(i))/(longStrength)^2)+(tau12(i)/strengthLT)^2;
+        A=((sigma1(i)/longStrength)^2)+((sigma2(i)/transStrength)^2)-((sigma1(i)*sigma2(i))/(longStrength)^2)+(tau12(i)/strengthLT(i/2))^2;
         FS(i)=1/sqrt(A);
         
-        A2=(sigma1(i-1)/longStrength2)^2+(sigma2(i-1)/transStrength2)^2-((sigma1(i-1)*sigma2(i-1))/(longStrength2)^2)+(tau12(i-1)/strengthLT)^2;
+        A2=(sigma1(i-1)/longStrength2)^2+(sigma2(i-1)/transStrength2)^2-((sigma1(i-1)*sigma2(i-1))/(longStrength2)^2)+(tau12(i-1)/strengthLT(i/2))^2;
         FS(i-1)=1/sqrt(A2);
     end
     FS=min(FS);
