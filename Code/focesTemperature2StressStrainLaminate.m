@@ -1,4 +1,4 @@
-function [sigmax,sigmay,tauxy,sigma1,sigma2,tau12,epsx,epsy,gammaxy,eps1,eps2,gamma12] = focesTemperature2StressStrainLaminate(laminate,deltaT,Nx,Ny,Nxy,Mx,My,Mxy)
+function [sigmax,sigmay,tauxy,sigma1,sigma2,tau12,epsx,epsy,gammaxy,eps1,eps2,gamma12,Nxt,Nyt,Nxyt] = focesTemperature2StressStrainLaminate(laminate,deltaT,Nx,Ny,Nxy,Mx,My,Mxy)
     [E1s,E2s,G12s,v12s,thicknesses,thetas,longStrengthTen,longStrengthCom,tranStrengthTen,tranStrengthCom,strengthLT,alphax,alphay,alphaxy,betax,betay,betaxy] = laminateReader(laminate);
     zs = laminateDistances(thicknesses);
     thickness=sum(thicknesses);

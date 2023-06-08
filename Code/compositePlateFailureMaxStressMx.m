@@ -1,12 +1,12 @@
-function [PxMax]=compositePlateFailureMaxStress(laminate,L,W)
+function [MxMax]=compositePlateFailureMaxStressMx(laminate,L,W)
 
 [~,~,~,~,~,~,longStrengthTen,longStrengthCom,tranStrengthTen,tranStrengthCom,strengthLT,~,~,~,~,~,~] = laminateReader(laminate);
 
 
-Nx=1/W;
+Nx=0;
 Ny=0;
 Nxy=0;
-Mx=0;
+Mx=1/W;
 My=0;
 Mxy=0;
 
@@ -31,7 +31,7 @@ PxTen2Max=min(PxTen2);
 PxCom2Max=min(abs(PxCom2));
 Px12Max=min(abs(Px12));
 
-PxMax=[PxTen1Max,PxCom1Max,PxTen2Max,PxCom2Max,Px12Max];
-PxMax=min(abs(PxMax));
+MxMax=[PxTen1Max,PxCom1Max,PxTen2Max,PxCom2Max,Px12Max];
+MxMax=min(abs(MxMax));
 
 end
