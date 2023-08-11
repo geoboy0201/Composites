@@ -9,26 +9,34 @@ function [FS]=maximumStressTheory(laminate,Nx,Ny,Nxy,Mx,My,Mxy)
         
         if sigma1(i)>0
             FSsigma1(i)=longStrengthTen(i/2)/sigma1(i);
-        else
+        elseif sigma1(i)<0
             FSsigma1(i)=-longStrengthCom(i/2)/sigma1(i);
+        else
+            FSsigma1(i)=inf;
         end
         
         if sigma1(i-1)>0
             FSsigma1(i-1)=longStrengthTen(i/2)/sigma1(i-1);
-        else
+        elseif sigma1(i-1)<0
             FSsigma1(i-1)=-longStrengthTen(i/2)/sigma1(i-1);
+        else
+            FSsigma1(i-1)=inf;
         end
         
         if sigma2(i)>0
             FSsigma2(i)=tranStrengthTen(i/2)/sigma2(i);
-        else
+        elseif sigma2(i)<0
             FSsigma2(i)=-tranStrengthCom(i/2)/sigma2(i);
+        else
+            FSsigma2(i)=inf;
         end
         
         if sigma2(i-1)>0
             FSsigma2(i-1)=tranStrengthTen(i/2)/sigma2(i-1);
-        else
+        elseif sigma2(i-1)<0
             FSsigma2(i-1)=-tranStrengthTen(i/2)/sigma2(i-1);
+        else
+            FSsigma2(i-1)=inf;
         end
         
         FStau12(i)=strengthLT(i/2)/abs(tau12(i));
